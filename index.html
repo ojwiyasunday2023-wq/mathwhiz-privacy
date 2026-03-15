@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MathWhiz – Privacy Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg:      #0b0c14;
+    --bg2:     #0e1020;
+    --card:    #12152a;
+    --accent:  #32dbc9;
+    --accent2: #1ab8a6;
+    --gold:    #f5c842;
+    --text:    #e0e3f0;
+    --text2:   #7a80a0;
+    --border:  rgba(50,219,201,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* ── Background grid ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(50,219,201,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(50,219,201,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ── */
+  header {
+    position: sticky; top: 0;
+    background: rgba(11,12,20,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex; align-items: center; gap: 18px;
+    z-index: 100;
+  }
+
+  .logo-mark {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700; font-size: 18px;
+    color: #0b0c14;
+    flex-shrink: 0;
+  }
+
+  .logo-text { font-family: 'Space Mono', monospace; font-size: 20px; font-weight: 700; color: var(--text); }
+  .logo-sub  { font-size: 13px; color: var(--accent); margin-top: 1px; }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 80px 40px 48px;
+    max-width: 760px; margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(50,219,201,0.10);
+    border: 1px solid rgba(50,219,201,0.30);
+    border-radius: 20px;
+    padding: 5px 18px;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero p {
+    color: var(--text2);
+    font-size: 15px;
+    max-width: 480px; margin: 0 auto;
+  }
+
+  .effective-date {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(245,200,66,0.10);
+    border: 1px solid rgba(245,200,66,0.25);
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-size: 13px; color: var(--gold);
+  }
+
+  /* ── Content wrapper ── */
+  .content {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── Section cards ── */
+  .section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .section:hover { border-color: rgba(50,219,201,0.35); }
+
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(50,219,201,0.12);
+    border: 1px solid rgba(50,219,201,0.25);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .section h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 17px; font-weight: 700;
+    color: var(--text);
+  }
+
+  .section p {
+    color: var(--text2);
+    font-size: 14.5px;
+    margin-bottom: 12px;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .section ul li {
+    color: var(--text2);
+    font-size: 14.5px;
+    padding: 7px 0 7px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+  }
+
+  .section ul li:last-child { border-bottom: none; }
+
+  .section ul li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--accent);
+    font-size: 12px;
+    top: 9px;
+  }
+
+  /* ── Highlight box ── */
+  .highlight {
+    background: rgba(50,219,201,0.07);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    color: var(--text);
+    font-size: 14.5px;
+    font-style: italic;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: linear-gradient(135deg, rgba(50,219,201,0.08), rgba(26,184,166,0.04));
+    border: 1px solid rgba(50,219,201,0.30);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contact-card h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px; font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .contact-card p { color: var(--text2); font-size: 14.5px; margin-bottom: 8px; }
+
+  .contact-card a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(50,219,201,0.35);
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .contact-card a:hover { border-color: var(--accent); }
+
+  /* ── Footer ── */
+  footer {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 32px 24px 48px;
+    color: var(--text2);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  footer span { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    header { padding: 14px 20px; }
+    .hero { padding: 52px 20px 32px; }
+    .section { padding: 24px 20px; }
+    .contact-card { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">M</div>
+  <div>
+    <div class="logo-text">MathWhiz</div>
+    <div class="logo-sub">Competent Math Solver</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Legal Document</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p>We believe in full transparency about how MathWhiz handles your information.</p>
+  <div class="effective-date">✦ Effective Date: January 1, 2026</div>
+</div>
+
+<div class="content">
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>Overview</h2>
+    </div>
+    <p>MathWhiz ("we", "our", or "the app") is a mathematics equation solver application developed by LAMOGI PRODUCTION. This Privacy Policy explains how we collect, use, and protect your information when you use MathWhiz on Android or any supported platform.</p>
+    <div class="highlight">By using MathWhiz, you agree to the practices described in this Privacy Policy.</div>
+  </div>
+
+  <!-- Information We Collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔍</div>
+      <h2>Information We Collect</h2>
+    </div>
+    <p>MathWhiz is designed to work primarily offline. We collect minimal information necessary for the app to function:</p>
+    <ul>
+      <li><strong style="color:#e0e3f0">Device Identifier</strong> — A non-reversible hardware fingerprint (derived from device model, processor, and screen DPI) used solely to track your daily free trial count. This identifier cannot be used to identify you personally.</li>
+      <li><strong style="color:#e0e3f0">Equations You Enter</strong> — Equations you type are processed entirely on your device. They are not transmitted to any server unless you explicitly use an internet-dependent feature.</li>
+      <li><strong style="color:#e0e3f0">Trial Usage Data</strong> — A count of how many free solving trials you have used today, stored in a Supabase database linked only to the anonymous device identifier above.</li>
+      <li><strong style="color:#e0e3f0">Ad Interaction Data</strong> — If you watch rewarded ads, the ad network (Google AdMob) may collect standard advertising identifiers as described in their own privacy policy.</li>
+    </ul>
+  </div>
+
+  <!-- Information We Do NOT Collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🚫</div>
+      <h2>Information We Do NOT Collect</h2>
+    </div>
+    <ul>
+      <li>Your name, email address, or any personal contact information</li>
+      <li>Your location or GPS data</li>
+      <li>Photos or camera content (Photo Scan processes images on-device only)</li>
+      <li>Contacts, calendar, or any other sensitive device data</li>
+      <li>Browsing history or activity outside the app</li>
+      <li>Payment information of any kind</li>
+    </ul>
+  </div>
+
+  <!-- How We Use Information -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <h2>How We Use Your Information</h2>
+    </div>
+    <ul>
+      <li>To enforce the daily free trial limit (5 free solves per day per device)</li>
+      <li>To restore your remaining trials if the app is reinstalled on the same device</li>
+      <li>To display rewarded ads so you can earn additional free trials</li>
+      <li>To improve app stability and diagnose technical issues</li>
+    </ul>
+    <p style="margin-top:14px">We do not sell, rent, or share your information with third parties for marketing purposes.</p>
+  </div>
+
+  <!-- Third-Party Services -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>MathWhiz uses the following third-party services. Each has its own privacy policy:</p>
+    <ul>
+      <li><strong style="color:#e0e3f0">Supabase</strong> — Cloud database used to store anonymous trial usage counts. Data is stored securely and never linked to personal identity. See <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></li>
+      <li><strong style="color:#e0e3f0">Google AdMob</strong> — Displays rewarded ads. May collect advertising IDs as per Google's policies. See <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+    </ul>
+  </div>
+
+  <!-- Data Security -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>Data Security</h2>
+    </div>
+    <p>We take reasonable technical measures to protect the limited data we store:</p>
+    <ul>
+      <li>All communication with Supabase is encrypted via HTTPS/TLS</li>
+      <li>The anonymous device identifier cannot be reverse-engineered to identify you</li>
+      <li>Row-level security policies restrict database access to only the operations the app requires</li>
+      <li>No passwords or financial data are ever stored or transmitted</li>
+    </ul>
+  </div>
+
+  <!-- Children's Privacy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>MathWhiz is suitable for users of all ages, including students. We do not knowingly collect any personal information from children under 13. Since we do not collect personal information from any user, there is no special risk to younger users beyond standard ad network exposure.</p>
+    <p>Parents who have concerns about ad content may contact us to request a version of the app with ads disabled.</p>
+  </div>
+
+  <!-- Your Rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Because we do not collect personally identifiable information, most data rights (access, correction, deletion) are satisfied by design. However, you may:</p>
+    <ul>
+      <li>Reset your trial count by contacting us — we will remove the anonymous record associated with your device</li>
+      <li>Opt out of personalised ads through your Android device settings under <em>Google → Ads → Delete advertising ID</em></li>
+      <li>Request full deletion of any data linked to your device identifier by contacting us directly</li>
+    </ul>
+  </div>
+
+  <!-- Changes to This Policy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the Effective Date at the top of this page. Continued use of MathWhiz after any changes constitutes acceptance of the updated policy.</p>
+    <p>We encourage you to review this page periodically to stay informed.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or about how MathWhiz handles your data, please contact:</p>
+    <p><strong style="color:#e0e3f0">LAMOGI PRODUCTION</strong></p>
+    <p>Developer of MathWhiz</p>
+    <p style="margin-top:12px">📧 <a href="mailto:privacy@mathwhiz.app">privacy@mathwhiz.app</a></p>
+    <p style="margin-top:6px; font-size:13px; color:#555e80">Replace this email with your actual contact address before publishing.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <span>MathWhiz</span> · LAMOGI PRODUCTION · All rights reserved</p>
+  <p style="margin-top:6px">This privacy policy was last updated January 2026</p>
+</footer>
+
+</body>
+</html>
